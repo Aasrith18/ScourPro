@@ -1,5 +1,5 @@
 # ScourPro: Automated sand bed profiler for laboratory flumes
-This project is a sand bed profiler aimed specifically at scour profiling on the Hydraulic laboratory flumes. This file clearly documents the progress of this project (failures & the knowledge acquired from them).
+This project is a sand bed profiler aimed specifically at scour profiling on the Hydraulic laboratory flumes. This file clearly documents the progress of this project (failures & the knowledge acquired from them) and also outlines the requirements, scope and direction for the final product.
 
 ### Visual Prototype: Hero image, Project overview, Output visualization
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/e26254ad-21c4-48f1-8e39-5c6626e935e1" />

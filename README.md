@@ -19,20 +19,22 @@ This project is a sand bed profiler aimed specifically at scour profiling on the
 
 1. [Introduction](#1-introduction)
 2. [Components Used](#2-components-used)
-[Assembly Instructions](#3-assembly-instructions)
-[Wiring Diagram](#4-wiring-diagram)
-[Code Overview](#5-code-overview)
-[Future Plans](#7-future-plans)
-[Repository Structure](#9-repository-structure)
-[Credits & Acknowledgements](#10-credits--acknowledgements)
+3. [Work Done So Far](#3-work-done-so-far)
+4. [Wiring Diagram](#4-wiring-diagram)
+5. [Assembly Instructions](#5-assembly-instructions)
+6. [Code Overview](#6-code-overview)
+7. [Future Plans](#7-future-plans)
+8. [License](#8-license)
+9. [Repository Structure](#9-repository-structure)
+10. [Credits & Acknowledgements](#10-credits--acknowledgements)
 
 ## 1. Introduction
 This project aims to speed up the surface profiling process on the laboratory flumes by automatically moving a sensor, along x-direction (width) and y-direction (length), which measures the depth (z-direction) of the sand bed surface. 
 
-## 2. Components Used
+## 2. Components Used (NEED TO UPDATE)
 A detailed Engineering Bill of Materials (EBOM) is provided [here](https://docs.google.com/spreadsheets/d/1VOksqOdsrbbUIk9T7hXksDzNJ4-1fR_ZSVMrzwDk07w/edit?usp=sharing).
 
-| Components (embedded) | Quantity | Notes                      |
+| Components (embedded) | Quantity | Notes                 |
 |------------------|----------|----------------------------|
 | Raspberry Pi Pico| 1        | Micro controller           |
 | NEMA17 stepper motor| 3     | Stepper motor              |
@@ -48,7 +50,45 @@ A detailed Engineering Bill of Materials (EBOM) is provided [here](https://docs.
 | 3D Printed Parts | -        | Provided in `/stl` folder  |
 | Misc. Hardware   | -        | Screws, bearings, etc.     |
 
+## 3. Work Done So Far
+I started this project with - a stepper motor (NEMA17), stepper motor driver (DM556), microcontroller (Raspberry Pi Pico 2), 24V power supply.
+Using DM556 stepper motor driver was an overkill so it was replaced with A4988 stepper motor driver.
+After a lot of effort, the correct wiring for the NEMA17 motor was figured out. It is shown in the [wiring diagram](#4-wiring-diagram) section below.
+
+After the raspberry pi pico 2 is burnt (my bad), I shifted to raspberry pi pico (coz I didn't see any difference between them, at least for the project requirement).
+Testing was then done with a 12V power supply and A4988 stepper motor driver. The code file (just one) along with the libraries used is shared in the [code overview](#6-code-overview) section below.
+
+After testing different options for the achieving higher speeds for the motor, these parameters are suggested. (just a suggestion)
+24V power supply, 1-1.2 A current (adjustable on A4988 motor driver).
+
+I also got a distance measurement sensor from meskernel **(provide link)**. No proper documentation was available for this sensor.
+It is pretty easy to use with a USB connection but I couldn't figure how to use it with a UART connection.
+Unfortunately, till date, this sensor is the only feasible option we have. So if you're going to use it.. all the best 👍
+
+## 4. Wiring Diagram
+'photo'
+motor ka wire - color code
+
+## 5. Assembly Instructions
+will be done after CAD modelling
+
+## 6. Code Overview
+This project involves MicroPython code file (singular) to communicate with the A4988 motor driver. I've uploaded the file in this repository.
+**Code path: (TBD)**
+
+Two libraries **(machine and time)** are used in the code.
+**Functionalities:**
+- Machine library: (TBD)
+- Time library: (TBD)
+
+## 7. Future Plans
 
 
+## 8. License
 
+
+## 9. Repository Structure
+
+
+## 10. Credits & Acknowledgements
 

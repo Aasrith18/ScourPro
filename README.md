@@ -55,17 +55,42 @@ I started this project with - a stepper motor (NEMA17), stepper motor driver (DM
 Using DM556 stepper motor driver was an overkill so it was replaced with A4988 stepper motor driver.
 After a lot of effort, the correct wiring for the NEMA17 motor was figured out. It is shown in the [wiring diagram](#4-wiring-diagram) section below.
 
-After the raspberry pi pico 2 is burnt (my bad), I shifted to raspberry pi pico (coz I didn't see any difference between them, at least for the project requirement).
-Testing was then done with a 12V power supply and A4988 stepper motor driver. The code file (just one) along with the libraries used is shared in the [code overview](#6-code-overview) section below.
+After the raspberry pi pico 2 is burnt (my bad), I shifted to raspberry pi pico (coz I didn't see any difference between them, at least for the project requirements 🤷‍♂️).
+Testing was then done with a 12V power supply and A4988 stepper motor driver. The code file along with the libraries used is shared in the [code overview](#6-code-overview) section below.
 
 After testing different options for the achieving higher speeds for the motor, these parameters are suggested. (just a suggestion)
 24V power supply, 1-1.2 A current (adjustable on A4988 motor driver).
 
-I also got a distance measurement sensor from meskernel **(provide link)**. No proper documentation was available for this sensor.
+The initial version of this project was quite flimsy but good enough to work with during motor testing. I've uploaded a video from when the motor first worked.
+Although, there are some **important** things to note regarding the codes given in this repo {[code overview](#6-code-overview)}:
+- The 323 revolutions, hardcoded, is the total number of revolutions it takes to get from one end of the lead screw to the other (found out the hard way 😮‍💨). You may or may not need this. So to you, this is a variable you need to adjust after the hardware is setup. If you don't want to hardcode it and provide input options for width and length to be covered, then that would be great as well.
+- The steps per revolution are 400. I've tried decreasing and increasing them but the motor either stopped or made a lot of noise. I couldn't figure out why the others weren't working even though I adjusted both motor driver and the code accordingly. (lack of knowledge on my part. you can still give this a try. 🙂)
+- During the "Phase 2" of the motor movement (check in code), the motor is coded to stop for 1 sec after every 10 revolutions. This was done when the sensor was not in picture. And different experiments may require different resolution while taking a reading. And there's another thing to consider - the "tracking" feature of the sensor (basically, continuous readings without us having to send transmit command every time). Leave it as it is for testing the motor, but this will change based on the hardware setup and the sensor you get.
+
+
+https://github.com/user-attachments/assets/a4b7bfc3-b2b1-426d-8927-acc9cb2e59b3
+<p align="center">
+  <em>Initial version of working motor set up</em>
+</p>
+
+I also got a distance measurement sensor from [Meskernel LDL-10](https://www.meskernel.com/laser-distance-moudules/65904266.html). No proper documentation was available for this sensor.
 It is pretty easy to use with a USB connection but I couldn't figure how to use it with a UART connection.
 Unfortunately, till date, this sensor is the only feasible option we have. So if you're going to use it.. all the best 👍
 
+In that (worst case) scenario, here are some notes regarding the sensor:
+- The module I used was U85B, it only worked with the baud rate of 19200.
+- For using it with USB connection, you need to download the [meskernel software](https://lasersensor.net/en/download/software/).
+- This module had an RTS pin. I never found out what it is or does. Nor did I find any documentation of this sensor mentioning an RTS pin. 🧐 
+So I never got to use it with a UART connection and the sensor got damaged before I could figure it out.
+- Other modules may come with other problems, I'll let you discover them. 😐
+
+<img width="1600" height="895" alt="Sensor readings on software" src="https://github.com/user-attachments/assets/6c49ccd5-b28e-4eea-8db2-765d63cee37d" />
+<p align="center">
+  <em>Test readings I took with USB connection</em>
+</p>
+
 ## 4. Wiring Diagram
+make a wiring diagram with proteus
 'photo'
 motor ka wire - color code
 
@@ -74,18 +99,36 @@ will be done after CAD modelling
 
 ## 6. Code Overview
 This project involves MicroPython code file (singular) to communicate with the A4988 motor driver. I've uploaded the file in this repository.
-**Code path: (TBD)**
+I also uploaded the file to communicate with DM556 motor driver as well (just in case). The code paths are below.
+Code path: rasppi-a4988.py
+Code path: rasppi-dm556.py
 
 Two libraries **(machine and time)** are used in the code.
-**Functionalities:**
-- Machine library: (TBD)
-- Time library: (TBD)
+- Machine library:
+  What it is: The machine library is a core MicroPython module used to directly interact with the microcontroller's physical hardware.
+  What it is doing in this code:  Pin Initialization - It designates the Raspberry Pi Pico's GPIO pins (Step, Direction, Enable, and the onboard LED) as output pins using machine.Pin.OUT.
+  Digital Signaling: It toggles these pins High or Low (using .on(), .off(), and .value()) to physically communicate with the A4988 driver. This manages the motor's spin direction, actively enables or disables the driver module, and triggers the physical step actions. 
+
+- Time library:
+  What it is: The time module handles time-tracking, scheduling, and blocking delays.
+  What it is doing in this code:  Precise Motor Pulsing (Microseconds): It uses time.sleep_us() to create extremely short, calculated microsecond delays. This is used to form the active 25% duty cycle step pulses required to accurately turn the motor at a specific frequency.
+  Sequence Pacing (Seconds): It uses the standard time.sleep() function to introduce longer pauses. This controls the 1-second gaps when blinking the Pico's LED to signal startup, as well as the programmed 1-second resting periods every 10 revolutions during the motor's second phase of movement.  
 
 ## 7. Future Plans
-
+- Find a feasible sensor that meets the following requirements:
+  - Precision: 1 mm
+  - Accuracy: +/- 1 mm
+  - Range: 1-2 m
+  - Should be able to detect the distances of granular surfaces like sand
+  - Should have robust documentation
+  - Should detect distances of a point, instead of averaging out the entire field of view.
+  - Laboratory purposes. Need not be industrial.
+  - Budget friendly
+- Fabricate metal (aluminum mostly) components for hardware and put them together.
 
 ## 8. License
-
+Licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+See the [LICENSE](./LICENSE) file for full details.
 
 ## 9. Repository Structure
 

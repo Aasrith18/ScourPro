@@ -61,7 +61,7 @@ Testing was then done with a 12V power supply and A4988 stepper motor driver. Th
 After testing different options for the achieving higher speeds for the motor, these parameters are suggested. (just a suggestion)
 24V power supply, 1-1.2 A current (adjustable on A4988 motor driver).
 
-The initial version of this project was quite flimsy but good enough to work with during motor testing. I've uploaded a video from when the motor first worked.
+The initial version of this project was quite flimsy but good enough to work with during motor testing. I've uploaded a video (sped up) from when the motor first worked.
 Although, there are some **important** things to note regarding the codes given in this repo {[code overview](#6-code-overview)}:
 - The 323 revolutions, hardcoded, is the total number of revolutions it takes to get from one end of the lead screw to the other (found out the hard way 😮‍💨). You may or may not need this. So to you, this is a variable you need to adjust after the hardware is setup. If you don't want to hardcode it and provide input options for width and length to be covered, then that would be great as well.
 - The steps per revolution are 400. I've tried decreasing and increasing them but the motor either stopped or made a lot of noise. I couldn't figure out why the others weren't working even though I adjusted both motor driver and the code accordingly. (lack of knowledge on my part. you can still give this a try. 🙂)

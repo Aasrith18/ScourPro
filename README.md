@@ -82,7 +82,7 @@ In that (worst case) scenario, here are some notes regarding the sensor:
 - For using it with USB connection, you need to download the [meskernel software](https://lasersensor.net/en/download/software/).
 - This module had an RTS pin. I never found out what it is or does. Nor did I find any documentation of this sensor mentioning an RTS pin. 🧐 
 So I never got to use it with a UART connection and the sensor got damaged before I could figure it out.
-- Other modules may come with other problems, I'll let you discover them. 😐
+- Other modules may come with other problems, I'll let you discover them. 😄
 
 <img width="1600" height="895" alt="Sensor readings on software" src="https://github.com/user-attachments/assets/6c49ccd5-b28e-4eea-8db2-765d63cee37d" />
 <p align="center">

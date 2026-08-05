@@ -102,6 +102,7 @@ This project involves MicroPython code file (singular) to communicate with the A
 I also uploaded the file to communicate with DM556 motor driver as well (just in case). The code paths are below.
 
 > 📁 Code Path: [`rasppi-a4988.py`](rasppi-a4988.py)
+
 > 📁 Code Path: [`rasppi-dm556.py`](rasppi-dm556.py)
 
 Two libraries **(machine and time)** are used in the code.

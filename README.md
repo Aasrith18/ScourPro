@@ -95,7 +95,7 @@ make a wiring diagram with proteus
 motor ka wire - color code
 
 ## 5. Hardware Instructions
-The [/CAD files] folder contains all the necessary files. But, before you print them out, make sure to check the dimensions. The files were made with a general idea of the product and not tailored to a specific flume dimensions. Please pick a flume you wish to work on and alter the dimensions accordingly 🙂 I suggest you first run a trial with 3D printed components before fabricating any metal components.
+The [CAD files](/CAD%20files/) folder contains all the necessary files. But, before you print them out, make sure to check the dimensions. The files were made with a general idea of the product and not tailored to a specific flume dimensions. Please pick a flume you wish to work on and alter the dimensions accordingly 🙂 I suggest you first run a trial with 3D printed components before fabricating any metal components.
 
 ## 6. Code Overview
 This project involves MicroPython code file (singular) to communicate with the A4988 motor driver. I've uploaded the file in this repository.
@@ -143,6 +143,7 @@ ScourPro/
 ├── README.md             # Project documentation, wiring specs, and future scope
 ├── rasppi-a4988.py       # MicroPython script for Raspberry Pi Pico with A4988 driver
 └── rasppi-dm556.py       # Alternative MicroPython script for DM556 driver
+```
 
 ## 10. Credits & Acknowledgements
 

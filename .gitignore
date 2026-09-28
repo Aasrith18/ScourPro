@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# MicroPython / Environment files
+.env
+venv/
+env/
+ENV/
+
+# CAD temporary and backup files (SolidWorks, Fusion360, AutoCAD, etc.)
+*.tmp
+*~$*
+*.bak
+*.swp
+*.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

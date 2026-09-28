@@ -47,7 +47,7 @@ A detailed Engineering Bill of Materials (EBOM) is provided [here](https://docs.
 |------------------|----------|----------------------------|
 | 2020 V-Slot Aluminium Extrusion Profile 1000 mm (For frame) | - | - |
 | V-Wheel Kit & Connecting Plates (For custom mounting) | - | - |
-| 3D Printed Parts | -        | Provided in `/stl` folder  |
+| 3D Printed Parts | -        | Provided in `/CAD files` folder  |
 | Misc. Hardware   | -        | Screws, bearings, etc.     |
 
 ## 3. Work Done So Far

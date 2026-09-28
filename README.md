@@ -126,7 +126,7 @@ Two libraries **(machine and time)** are used in the code.
   - Should detect distances of a point, instead of averaging out the entire field of view.
   - Laboratory purposes. Need not be industrial.
   - Budget friendly
-- Fabricate metal (aluminum mostly) components for hardware and put them together.
+- Fabricate light weight metal (aluminum mostly) components for hardware and assemble them together.
 
 ## 8. License
 Licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  

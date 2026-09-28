@@ -31,7 +31,7 @@ This project is a sand bed profiler aimed specifically at scour profiling on the
 ## 1. Introduction
 This project aims to speed up the surface profiling process on the laboratory flumes by automatically moving a sensor, along x-direction (width) and y-direction (length), which measures the depth (z-direction) of the sand bed surface. 
 
-## 2. Components Used (NEED TO UPDATE)
+## 2. Components Used
 A detailed Engineering Bill of Materials (EBOM) is provided [here](https://docs.google.com/spreadsheets/d/1VOksqOdsrbbUIk9T7hXksDzNJ4-1fR_ZSVMrzwDk07w/edit?usp=sharing).
 
 | Components (embedded) | Quantity | Notes                 |

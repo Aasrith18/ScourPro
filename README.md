@@ -147,3 +147,6 @@ ScourPro/
 
 ## 10. Credits & Acknowledgements
 
+* **Project Guidance:** Special thanks to **Prof. Dhrubajyoti Sen** and the **Department of Civil Engineering / Hydraulics Laboratory** for their continuous support, mentorship, and resources throughout the development of this project.
+* **Open Source Community:** Grateful to the MicroPython core development team for providing robust libraries (`machine`, `time`) that simplified microcontroller interfacing.
+* **Hardware & Components:** Acknowledgements to the manufacturers and hardware suppliers for providing open specifications and modules (Raspberry Pi Foundation, Allegro MicroSystems for the A4988 driver).

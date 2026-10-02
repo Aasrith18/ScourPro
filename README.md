@@ -91,6 +91,9 @@ So I never got to use it with a UART connection and the sensor got damaged befor
 
 ## 4. Wiring Diagram
 <img width="3508" height="2480" alt="wiring_img" src="https://github.com/user-attachments/assets/41679bb4-c842-4fa3-aea6-8b4b8b6220a2" />
+<p align="center">
+  <em>Wiring Diagram for the NEMA17 motor with A4988 stepper motor driver</em>
+</p>
 
 ## 5. Hardware Instructions
 The [CAD files](/CAD%20files/) folder contains all the necessary files. But, before you print them out, make sure to check the dimensions. The files were made with a general idea of the product and not tailored to a specific flume dimensions. Please pick a flume you wish to work on and alter the dimensions accordingly 🙂 I suggest you first run a trial with 3D printed components before fabricating any metal components.

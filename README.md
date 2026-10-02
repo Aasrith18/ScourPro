@@ -90,9 +90,8 @@ So I never got to use it with a UART connection and the sensor got damaged befor
 </p>
 
 ## 4. Wiring Diagram
-make a wiring diagram with proteus
-'photo'
-motor ka wire - color code
+<img width="3508" height="2480" alt="image" src="https://github.com/user-attachments/assets/d1bb7b4e-202f-4cfc-a671-05a1e60a8f06" />
+
 
 ## 5. Hardware Instructions
 The [CAD files](/CAD%20files/) folder contains all the necessary files. But, before you print them out, make sure to check the dimensions. The files were made with a general idea of the product and not tailored to a specific flume dimensions. Please pick a flume you wish to work on and alter the dimensions accordingly 🙂 I suggest you first run a trial with 3D printed components before fabricating any metal components.
